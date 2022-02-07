@@ -1,0 +1,176 @@
+:root {
+  /* ## Colors
+
+      ### Primary */
+  --moderate-violet: hsl(263, 55%, 52%);
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+
+  /* ### Neutral */
+  --light-gray: hsl(0, 0%, 81%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 13px;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background-color: var(--light-gray);
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+h2 {
+  font-size: 1rem;
+  color: var(--white);
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 0.8rem;
+  color: var(--light-gray);
+  font-weight: 500;
+}
+
+p {
+  font-size: 1rem;
+  color: var(--white);
+}
+
+/* Card General styling */
+
+main {
+  width: 70%;
+  height: 70%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1em;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border-style: none;
+  border-radius: 0.5rem;
+}
+
+/* Card header Styling */
+
+.card__header {
+  display: flex;
+  flex-direction: row;
+}
+
+.card__avatarcontainer {
+  margin-right: 1.3rem;
+}
+
+/* Grid specific - positioning / and BG Color */
+
+.card-daniel {
+  grid-column: 1 / 3;
+  background-color: var(--moderate-violet);
+}
+
+.card-kira {
+  grid-column: 4 / 5;
+  grid-row: 1 / 3;
+  background-color: var(--white);
+}
+
+.card-jonathan {
+  background-color: var(--very-dark-grayish-blue);
+}
+
+.card-jeanette {
+  background-color: var(--white);
+}
+
+.card-patrick {
+  grid-column: 2 / 4;
+  background-color: var(--very-dark-blackish-blue);
+}
+
+/* Grid specific - Color changes to individual cards */
+
+.card-kira h2,
+.card-jeanette h2,
+.card-kira .card__title,
+.card-jeanette .card__title {
+  color: var(--very-dark-blackish-blue);
+}
+
+.card-kira .card__description,
+.card-jeanette .card__description,
+.card-jeanette .card__position,
+.card-kira .card__position {
+  color: var(--very-dark-grayish-blue);
+  opacity: 0.8;
+}
+
+.card-daniel .card__description,
+.card-jonathan .card__description,
+.card-patrick .card__description {
+  opacity: 0.8;
+}
+
+/* Quotation Background */
+
+.card-daniel {
+  background-image: url(./images/bg-pattern-quotation.svg);
+  background-size: 8rem;
+  background-repeat: no-repeat;
+  background-position: 80% top;
+}
+
+/* Card Styling */
+
+.card__title {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.card__avatar {
+  border-radius: 50%;
+  height: 2.5rem;
+}
+
+/* Adding responsiveness */
+
+@media only screen and (max-width: 1460px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 80%;
+    position: absolute;
+  }
+
+  .card {
+    min-width: 422px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  main {
+    width: 85%;
+    height: 80%;
+  }
+}
