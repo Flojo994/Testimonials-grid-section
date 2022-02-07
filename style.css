@@ -154,7 +154,7 @@ main {
 
 /* Adding responsiveness */
 
-@media only screen and (max-width: 1460px) {
+@media only screen and (max-width: 1439px) {
   main {
     display: flex;
     flex-direction: column;
